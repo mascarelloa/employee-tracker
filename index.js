@@ -10,6 +10,7 @@ const connection = mysql.createConnection({
   database: "employeeDB",
 });
 
+//This starts the connection, calls the function that runs the menu, and throws error if unable to connect.
 connection.connect((err) => {
   if (err) throw err;
   startMenu();
@@ -18,6 +19,8 @@ connection.connect((err) => {
 //This allows async await.
 connection.query = util.promisify(connection.query);
 
+
+//This starts the main menu with the different options for interacting with the database.
 const startMenu = () => {
   inquirer
     .prompt({
@@ -38,6 +41,7 @@ const startMenu = () => {
         "Exit",
       ],
     })
+    //This will run the matching function depending on which option was selected. 
     .then((answer) => {
       switch (answer.option) {
         case "View All Employees":
@@ -71,6 +75,7 @@ const startMenu = () => {
           removeDepartment();
           break;
         case "Exit":
+            //This ends the connection when Exit is selected.
           console.log("End.");
           connection.end();
           break;
@@ -97,7 +102,6 @@ const depts = async () => {
         value: employee.id,
       };
     });
-    console.log(employeesArr)
     return employeesArr;
   };
   
