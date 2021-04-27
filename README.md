@@ -6,7 +6,7 @@
   ## Description 
   This is a program that talks to a database of employees, roles, and departments using Node and MySQL. It allows the user to interact with the data by viewing, adding, removing, and updating employees, roles, and departments. 
 
-  View the live application [here](https://drive.google.com/file/d/10_L_9WpV6gHm2IjtJvKkh6Ny-A1TAm-g/view).
+  View the video demo [here](https://drive.google.com/file/d/10_L_9WpV6gHm2IjtJvKkh6Ny-A1TAm-g/view).
 
   ## Table of Contents
   * [Installation](#Installation)
